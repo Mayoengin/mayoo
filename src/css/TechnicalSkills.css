@@ -1,0 +1,88 @@
+/* Technical skills section */
+.technical-skills-container {
+  margin-top: 150px; /* Add more space above the technical skills section */
+  padding: 0 20px;
+}
+
+.technical-skills-header {
+  font-size: 2.5rem;
+  color: #50c878;
+  margin-bottom: 40px;
+  margin-top: 150px;
+}
+
+.skills-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.skills-card {
+  background-color: #1a1a1a;
+  border-radius: 30px;
+  padding: 20px;
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateX(-50px); /* Start position for sideways fade-in */
+  animation: fadeInSideways 1s forwards;
+}
+
+.skills-card-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #32cd32; /* Change this color as needed */
+  margin-bottom: 20px;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-item {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+  justify-content: center;
+}
+
+.skill-item img {
+  width: 24px;
+  height: 24px;
+}
+
+.experience-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.experience-item {
+  text-align: center;
+}
+
+.experience-item h3 {
+  font-size: 2.5rem;
+  color: #32cd32; /* Change this color as needed */
+}
+
+.experience-item p {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+@keyframes fadeInSideways {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
