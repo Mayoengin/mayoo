@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/mayoo/static/css/main.a1d69581.css",
+    "main.js": "/mayoo/static/js/main.88150a09.js",
+    "static/js/453.acca0757.chunk.js": "/mayoo/static/js/453.acca0757.chunk.js",
+    "static/media/stock.png": "/mayoo/static/media/stock.9176f9b1244c473778cd.png",
+    "static/media/profile-pic.PNG": "/mayoo/static/media/profile-pic.b0e1b625fafd5c06c81f.PNG",
+    "static/media/ecg.jpg": "/mayoo/static/media/ecg.b78d6943e24bea01019c.jpg",
+    "static/media/github.png": "/mayoo/static/media/github.caeb9ff86e1c3e87612e.png",
+    "static/media/host.jpg": "/mayoo/static/media/host.11cd8b7193d9c2bfba70.jpg",
+    "static/media/react.png": "/mayoo/static/media/react.07d9e407d4e491c548d5.png",
+    "static/media/git.png": "/mayoo/static/media/git.985a7327fc7347ebdba0.png",
+    "static/media/python.png": "/mayoo/static/media/python.07a98139a3638f2a224b.png",
+    "static/media/node.png": "/mayoo/static/media/node.e328955d6bbbf3ebc72b.png",
+    "static/media/nurslink.PNG": "/mayoo/static/media/nurslink.b09ce44803b46d4f5854.PNG",
+    "static/media/phone-call.png": "/mayoo/static/media/phone-call.9f67e819001cd616ba13.png",
+    "static/media/profile.png": "/mayoo/static/media/profile.4bb671e7777621c71d6a.png",
+    "static/media/css.png": "/mayoo/static/media/css.d1a3c1e59ca82dbdf815.png",
+    "static/media/api.png": "/mayoo/static/media/api.b4448407872dc2a02104.png",
+    "static/media/figma.png": "/mayoo/static/media/figma.72fbc535ebe253a5dbc4.png",
+    "static/media/email.png": "/mayoo/static/media/email.a2f2146f929409405da0.png",
+    "static/media/typescript.png": "/mayoo/static/media/typescript.af108db04a54d784da9b.png",
+    "static/media/linkedin.png": "/mayoo/static/media/linkedin.f249b38224ca41a0b909.png",
+    "static/media/javascript.png": "/mayoo/static/media/javascript.3dfb665e058d08c99f28.png",
+    "static/media/game.jpeg": "/mayoo/static/media/game.b061189390e77a4bc44c.jpeg",
+    "index.html": "/mayoo/index.html",
+    "main.a1d69581.css.map": "/mayoo/static/css/main.a1d69581.css.map",
+    "main.88150a09.js.map": "/mayoo/static/js/main.88150a09.js.map",
+    "453.acca0757.chunk.js.map": "/mayoo/static/js/453.acca0757.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a1d69581.css",
+    "static/js/main.88150a09.js"
+  ]
+}
