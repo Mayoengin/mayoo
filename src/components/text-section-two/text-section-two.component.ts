@@ -5,8 +5,16 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './text-section-two.component.html',
-  styleUrl: './text-section-two.component.scss'
+  styleUrls: ['./text-section-two.component.scss']
 })
 export class TextSectionTwoComponent {
+
+  scrollToSection(id: string) {
+    const section = document.getElementById(id);
+    if (section) {
+      const offsetTop = section.offsetTop - 70; // Adjust for navbar height
+      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+    }
+  }
 
 }
