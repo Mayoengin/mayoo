@@ -1,0 +1,74 @@
+<div class="third-layout">
+  <!-- Header -->
+  <div class="header">
+    <span class="tagline">MY WORK</span>
+    <h1>RECENT PROJECTS</h1>
+  </div>
+
+  <!-- Projects Container -->
+  <div #projectsContainer class="projects-container">
+    <div class="project-card" *ngFor="let project of projects">
+      <!-- Project Image -->
+      <div class="project-image-container" (click)="openModal(project)">
+        <img [src]="project.image" [alt]="project.title" class="project-image" />
+        <div class="overlay">
+          <div class="plus-circle"></div>
+        </div>
+      </div>
+
+      <!-- Project Content -->
+      <div class="project-content">
+        <h3>{{ project.title }}</h3>
+      </div>
+<!-- Arrow Button -->
+      <a href="#" class="arrow-button" (click)="openModal(project)" aria-label="View Project Details">
+        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Indicator Points for Normal View -->
+  <div class="indicator-points" *ngIf="!isMobileView">
+    <div class="point" [class.active]="activePoint === 0"></div>
+    <div class="point" [class.active]="activePoint === 1"></div>
+  </div>
+
+  <!-- Indicator Points for Mobile View -->
+  <div class="indicator-points" *ngIf="isMobileView">
+    <div
+      class="point"
+      *ngFor="let project of projects; let i = index"
+      [class.active]="activePoint === i"
+      (click)="scrollToProject(i)"
+    ></div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" *ngIf="isModalVisible" (click)="closeModal()"></div>
+  <div class="modal" *ngIf="isModalVisible">
+
+    <div class="modal-image">
+      <!-- Image displayed on the left -->
+      <img [src]="selectedProject?.image" [alt]="selectedProject?.title" />
+    </div>
+
+    <div class="modal-content">
+      <!-- Content displayed on the right -->
+      <div class="model-title">
+      <h2>{{ selectedProject?.title }}</h2>
+    </div>
+      <p>{{ selectedProject?.description }}</p>
+      <ul class="modal-list">
+        <li><strong>Type:</strong> {{ selectedProject?.type }}</li>
+        <li><strong>Languages:</strong> {{ selectedProject?.languages }}</li>
+        <li><strong>Platform:</strong> {{ selectedProject?.platforms }}</li>
+        <div class="live-url">
+        <li><strong>Live URL:</strong> <a [href]="selectedProject?.url" target="_blank">{{ selectedProject?.url }}</a></li>
+      </div>
+      </ul>
+    </div>
+    <button class="close-btn" (click)="closeModal()">×</button>
+
+  </div>
+</div>

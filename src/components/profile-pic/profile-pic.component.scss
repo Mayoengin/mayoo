@@ -1,0 +1,24 @@
+.profile-pic {
+  width: 550px; /* Adjust size */
+  height: auto;
+  border-radius: 10%; /* Make it circular */
+  object-fit: cover; /* Ensure the image fits nicely */
+  position: relative;
+  z-index: 2;
+  background-color: transparent;
+
+  @media (max-width: 768px) {
+      width: 100%;
+      order: 2; /* Position below text */
+      margin-top: 1rem;
+  }
+}
+
+.image-content {
+  position: relative;
+  max-width: 50%;
+
+  @media (max-width: 768px) {
+      max-width: 100%;
+  }
+}

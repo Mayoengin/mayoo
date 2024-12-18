@@ -1,0 +1,130 @@
+/* text-section-two.component.scss */
+
+.text-section-container {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0 auto; /* Center the container */
+
+  .header {
+    .tagline {
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      background-color: #003366; /* Blue background */
+      color: white;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      line-height: 1.3;
+      color: white;
+
+      .highlight {
+        color: #007bff; /* Blue highlight */
+      }
+    }
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #d4d4d4; /* Light gray text */
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      background-color: #142033; /* Slightly darker background */
+      padding: 1rem;
+      border-radius: 10px;
+      flex: 1; /* Ensure equal width */
+
+      h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #007bff; /* Blue color */
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: #d4d4d4; /* Light gray text */
+      }
+    }
+  }
+
+  .btn-primary {
+    background-color: #007bff; /* Blue button */
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    align-self: flex-start; /* Align button to the start */
+
+    &:hover {
+      background-color: #008c9e; /* Darker blue on hover */
+    }
+  }
+
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    max-width: 10 0%;
+    gap: 1rem;
+    
+    .header {
+      h1 {
+        font-size: 2rem;
+
+        .highlight {
+          font-size: 2rem;
+        }
+      }
+
+      .tagline {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+
+    .description {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .stats {
+      gap: 1rem;
+
+      .stat {
+        padding: 0.8rem;
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 0.85rem;
+        }
+      }
+    }
+
+    .btn-primary {
+      padding: 1rem 1.5rem;
+      font-size: 0.9rem;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}

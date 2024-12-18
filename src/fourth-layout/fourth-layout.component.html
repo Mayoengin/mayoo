@@ -1,0 +1,32 @@
+<div class="fourth-layout">
+    <div class="header">
+      <span class="tagline">SERVICES</span>
+      <h1>
+        DESIGN <span class="highlight">SERVICES</span> I AM PROVIDING
+      </h1>
+    </div>
+    <div class="services-container">
+      <div
+        class="service-card"
+        *ngFor="let service of services"
+        [ngStyle]="{ 'background-image': 'url(' + service.image + ')' }"
+      >
+        <div class="overlay">
+          <div class="icon-container">
+            <i [class]="service.icon"></i>
+          </div>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+          <div class="rating">
+            <!-- Full stars -->
+            <i class="fas fa-star" *ngFor="let _ of [].constructor(Math.floor(service.rating))"></i>
+            <!-- Half star -->
+            <i class="fas fa-star-half-alt" *ngIf="service.rating % 1 !== 0"></i>
+            <!-- Empty stars -->
+            <i class="far fa-star" *ngFor="let _ of [].constructor(5 - Math.ceil(service.rating))"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

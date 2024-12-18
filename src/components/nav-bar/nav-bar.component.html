@@ -1,0 +1,24 @@
+<nav class="nav-bar" [ngClass]="{ 'scrolled': isScrolled, 'menu-open': isMenuOpen }">
+  <div class="nav-content">
+    <!-- Logo Section -->
+    <div class="logo">
+      <img src="assets/logo.jpg" alt="Logo">
+      <h1>AYO</h1>
+    </div>
+    <!-- Mobile Menu Toggle -->
+    <div class="menu-toggle" (click)="toggleMenu()">☰</div>
+    <!-- Navigation Links -->
+    <ul class="nav-links" [ngClass]="{ 'open': isMenuOpen }">
+      <li
+        *ngFor="let link of navLinks"
+        [class.active]="activeLink === link"
+        (click)="scrollToSection(link.id); closeMenu()"
+      >
+        <a href="javascript:void(0)">{{ link.label }}</a>
+      </li>
+      <!-- Highlight Element -->
+      <div class="highlight" [ngStyle]="highlightStyle"></div>
+      <div class="button-link" (click)="closeMenu()">let's talk</div>
+    </ul>
+  </div>
+</nav>

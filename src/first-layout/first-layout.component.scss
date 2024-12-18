@@ -1,0 +1,48 @@
+.first-layout {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-end;   /* Align vertically to the bottom */
+  height: 110vh;           /* Full screen height */
+  padding: 2rem;
+  width: 80%;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    padding: 0;
+    
+
+    app-text-section {
+      order: 1; /* Show text first */
+      align-items: center;
+      margin-bottom: 1rem;
+      margin-top: 5rem;
+
+    }
+
+    app-profile-pic {
+      order: 2; /* Show picture below text */
+      width: 100%;
+      margin-top: 1rem;
+    }
+  }
+}
+
+app-text-section {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center horizontally within the section */
+  align-items: flex-end;   /* Align content to the bottom */
+  text-align: left;        /* Align text to the left if necessary */
+}
+
+app-profile-pic {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center horizontally within the section */
+  align-items: flex-end;   /* Align content to the bottom */
+  text-align: center;      /* Center the text inside the container */
+}

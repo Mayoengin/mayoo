@@ -1,0 +1,65 @@
+<div class="fifth-layout">
+  <div class="content-container">
+    <!-- Left Section -->
+    <div class="left-section">
+      <div class="image-container">
+        <img src="assets/profile-pic-3.jpg" alt="Person Image" />
+      </div>
+      <div class="contact-info">
+        <p>WRITE ME AN EMAIL</p>
+        <h4>Mayo.engin&#64;gmail.com</h4>
+        <p>RING ME UP</p>
+        <h4>+32 471 42 67 04</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <!-- Right Section -->
+    <div class="right-section">
+      <!-- Text Section -->
+      <div class="text-section">
+        <h3>Let’s Discuss Your Project</h3>
+        <p>
+          Always available for freelancing if the right project comes along. Feel
+          free to contact me.
+        </p>
+      </div>
+      <!-- Form Section -->
+      <div class="form-section">
+        <form (ngSubmit)="sendEmail()">
+          <div class="form-group">
+            <div class="input-container">
+              <label for="name">First Name</label>
+              <input id="name" type="text" [(ngModel)]="formData.name" name="name" required placeholder="Name *" />
+            </div>
+            <div class="input-container">
+              <label for="email">Your Email</label>
+              <input id="email" type="email" [(ngModel)]="formData.email" name="email" required placeholder="Email *" />
+            </div>
+          </div>
+          <div class="input-container">
+            <label for="subject">Subject</label>
+            <input id="subject" type="text" [(ngModel)]="formData.subject" name="subject" placeholder="Subject *" />
+          </div>
+          <div class="input-container">
+            <label for="message">Your Message</label>
+            <textarea id="message" [(ngModel)]="formData.message" name="message" required placeholder="Your message *"></textarea>
+          </div>
+          <button
+          type="submit"
+          class="send-btn"
+          [ngClass]="{ 'sent': isEmailSent }"
+        >
+          {{ isEmailSent ? 'Message Sent Successfully' : 'Send Message' }}
+        </button>
+             </form>
+        
+        </div>
+        
+    </div>
+  </div>
+</div>
+
