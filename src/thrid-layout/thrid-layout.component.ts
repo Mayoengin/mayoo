@@ -16,9 +16,12 @@ export class ThirdLayoutComponent implements AfterViewInit {
     { image: 'assets/registration.jpg', title: 'Employee Registration App', description: 'Employee Registration App Angular 18.api usage, dynamic entry, inline Editing in Angular', type: 'mobile web app', languages: ['angular', 'typescript'], platforms: ['windows', 'mac', 'linux'], url: 'https://github.com/Mayoengin/-Employee-Registration-app' },
     { image: 'assets/stock.jpg', title: 'Stock Predictor', description: 'Created a stock predictor using Python and Flask for backend framework as well as HTML and CSS for frontend, while also handling real-time data retrieval and LLM model integration', type: 'web app', languages: ['python', 'flask', 'html', 'css'], platforms: ['python', 'css', 'html'], url: 'https://github.com/Mayoengin/stock_prices_prediction' },
     { image: 'assets/heart.jpg', title: 'ECG Classification Model', description: 'A deep neural network with residual blocks (DNN-RB) for classifying ECG signals into six types of heartbeats. Using the MIT-BIH Arrhythmia dataset, the model inputs segmented ECG signals and outputs 6 types of classifications', type: 'model', languages: ['python', 'tensorflow', 'keras'], platforms: ['google colab'], url: 'https://github.com/Mayoengin/ecg_classification' },
-    { image: 'assets/host.jpg', title: 'Nurse Link Mobile App', description: 'Developing a mobile application that facilitates the connection between the nurses and the people who need them at home on a regular basis. (Uber for nurses).', type: 'mobile web app', languages: ['flutter', 'dart'], platforms: ['windows', 'mac', 'linux'] },
-    { image: 'assets/alex.png', title: 'Alex chatbot', description: 'A Python-powered chatbot using the Olama LLM Features a 3D model frontend with emotional expressions for enhanced interactivity.', type: 'chatbot', languages: ['python', 'html', 'css'], platforms: ['windows', 'mac', 'linux'] },
+    { image: 'assets/host.jpg', title: 'Nurse Link Mobile App', description: 'Developing a mobile application that facilitates the connection between the nurses and the people who need them at home on a regular basis. (Uber for nurses).', type: 'mobile web app', languages: ['flutter', 'dart'], platforms: ['windows', 'mac', 'linux'] , url: 'https://github.com/Mayoengin/nurslink_1'},
+    { image: 'assets/alex.png', title: 'Alex chatbot', description: 'A Python-powered chatbot using the Olama LLM Features a 3D model frontend with emotional expressions for enhanced interactivity.', type: 'chatbot', languages: ['python', 'html', 'css'], platforms: ['windows', 'mac', 'linux'], url: 'https://github.com/Mayoengin/alex-chatbot'},
     { image: 'assets/Capture.PNG', title: 'Movie Web App', description: 'An Angular app that displays recent movies, built to improve skills and explore Angular development.', type: 'mobile web app', languages: ['angular', 'typescript'], platforms: ['windows', 'mac', 'linux'], url: 'https://mayoengin.github.io/movie-web-app' },
+    { image: 'assets/hospital.webp', title: 'hospital Data analisys', description: 'As part of an internship at the hospital, we were tasked with developing an AI algorithm to analyze and share data on patients who need to lose weight for IVF-related reasons.then develop an AI to predict the next weight of the patient', type: 'web system', languages: ['models', 'excels','python','docker'], platforms: ['windows', 'mac', 'linux'], url: 'https://github.com/Mayoengin/hospital-project' },
+    { image: 'assets/MRI.webp', title: 'MRI Detector AI', description: 'This project implements a CNN-based approach for brain tumor detection, utilizing data augmentation and achieving high accuracy in classification tasks.', type: 'AI Detector', languages: ['models','python'], platforms: ['windows', 'mac', 'linux'], url: 'https://github.com/Mayoengin/MRI-Brain-Tumor_detector' },
+    { image: 'assets/where is waldo.webp', title: 'Waldo AI finder', description: 'Train the model using a triplet loss then Re-train the model for binary classification for finding waldo', type: 'AI Detector', languages: ['models','python'], platforms: ['windows', 'mac', 'linux'], url: 'https://github.com/Mayoengin/waldo' },
   ];
 
   isDragging = false;
@@ -137,23 +140,12 @@ export class ThirdLayoutComponent implements AfterViewInit {
   }
   updateActivePoint(container: HTMLElement): void {
     const cardWidth = (container.children[0] as HTMLElement).offsetWidth;
-    const scrollLeft = container.scrollLeft;
-  
-    // Calculate the active card index based on the center of the container's visible area
-    const center = scrollLeft + container.offsetWidth / 2;
-  
-    // Find the index of the card closest to the center
-    const activeIndex = Math.floor(center / cardWidth);
-  
-    // Map activeIndex to activePoint
-    const cardsPerIndicator = Math.ceil(this.projects.length / 3); // Adjust number of indicators
-    const activePoint = Math.floor(activeIndex / cardsPerIndicator);
-  
-    // Clamp activePoint to valid range
-    this.activePoint = Math.max(0, Math.min(activePoint, 2)); // Assuming 3 indicators (0, 1, 2)
-  
-    console.log(`ActiveIndex: ${activeIndex}, ActivePoint: ${this.activePoint}`);
+    const center = container.scrollLeft + container.offsetWidth / 3;
+    const activeIndex = Math.round(center / cardWidth);
+    const totalIndicators = 4; // Assuming 3 indicators
+    this.activePoint = Math.min(Math.floor(activeIndex / Math.ceil(this.projects.length / totalIndicators)), totalIndicators - 1);
   }
+  
   
   
   scrollToProject(index: number): void {

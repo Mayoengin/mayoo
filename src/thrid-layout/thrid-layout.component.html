@@ -21,9 +21,14 @@
         <h3>{{ project.title }}</h3>
       </div>
 <!-- Arrow Button -->
-      <a href="#" class="arrow-button" (click)="openModal(project)" aria-label="View Project Details">
-        <i class="fas fa-arrow-right" aria-hidden="true"></i>
-      </a>
+<a
+  href="javascript:void(0);"
+  class="arrow-button"
+  (click)="openModal(project)"
+  aria-label="View Project Details"
+>
+  <i class="fas fa-arrow-right" aria-hidden="true"></i>
+</a>
 
     </div>
   </div>
@@ -32,6 +37,8 @@
   <div class="indicator-points" *ngIf="!isMobileView">
     <div class="point" [class.active]="activePoint === 0"></div>
     <div class="point" [class.active]="activePoint === 1"></div>
+    <div class="point" [class.active]="activePoint === 2"></div>
+    <div class="point" [class.active]="activePoint === 3"></div>
   </div>
 
   <!-- Indicator Points for Mobile View -->

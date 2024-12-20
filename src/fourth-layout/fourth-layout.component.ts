@@ -28,10 +28,10 @@ export class FourthLayoutComponent {
     },
     {
       image: 'assets/service-03.jpg',
-      title: 'SEO Marketing',
-      description: 'Boosting your online visibility with tailored SEO strategies designed to drive organic traffic, improve search rankings, and connect with your target audience. Let your business stand out where it matters most—on search engines.',
+      title: 'Data analytics',
+      description: 'I specialize in turning your data into clear, actionable insights.',
       icon: 'fas fa-chart-line',
-      rating: 3.5,
+      rating: 4.5,
     },
     {
       image: 'assets/ai.webp',
