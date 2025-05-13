@@ -1,0 +1,237 @@
+.fifth-layout {
+  --px-theme-rgb: 7, 136, 255;
+
+  background: rgba(var(--px-theme-rgb), .1);
+  min-height: 100vh; /* Ensure each section covers the full viewport */
+  display: flex;
+
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+
+  .content-container {
+      width: 90%; /* Container width */
+      max-width: 1200px; /* Maximum width for large screens */
+      border-radius: 10px; /* Rounded corners */
+      padding: 2rem; /* Padding inside the container */
+      background: linear-gradient(
+          to top,
+          rgba(var(--px-theme-rgb), 0.2),
+          rgba(0, 0, 0, 0.9)
+      ); /* Gradient background */
+      color: white; /* Text color */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+      display: flex;
+      gap: 2rem; /* Space between sections */
+
+      .left-section {
+          flex: 1;
+          max-width: 35%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1.5rem;
+          text-align: left;
+          .image-container {
+              width: 100%;
+              max-width: 250px;
+              border-radius: 10px;
+              overflow: hidden;
+
+              img {
+                  width: 100%;
+                  height: auto;
+                  display: block;
+              }
+          }
+
+          .contact-info {
+              color: white;
+              text-align: left;
+              
+              p {
+                  font-size: 0.9rem;
+                  margin-bottom: 0.2rem;
+                  color: #d4d4d4; /* Light gray text */
+              }
+
+              h4 {
+                  font-size: 1rem;
+                  font-weight: bold;
+                  margin-bottom: 1rem;
+              }
+
+              .social-icons {
+                  display: flex;
+                  gap: 1rem;
+
+                  a {
+                      color: white;
+                      font-size: 1.2rem;
+                      transition: color 0.3s ease;
+
+                      &:hover {
+                          color: #007bff; /* Highlight on hover */
+                      }
+                  }
+              }
+          }
+      }
+
+      .right-section {
+          flex: 2;
+          max-width: 60%;
+          color: white;
+
+          .text-section {
+              margin-bottom: 2rem;
+              
+              h3 {
+                  font-size: 2rem;
+                  font-weight: bold;
+                  margin-bottom: 1rem;
+              }
+
+              p {
+                  font-size: 1rem;
+                  color: #d4d4d4; /* Light gray text */
+              }
+          }
+
+          .form-section {
+              form {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 1.5rem;
+              
+                  .form-group {
+                      display: flex;
+                      gap: 1rem;
+              
+                      .input-container {
+                          flex: 1;
+                          display: flex;
+                          flex-direction: column;
+              
+                          label {
+                              font-size: 0.9rem;
+                              color: #d4d4d4; /* Light gray text */
+                              margin-bottom: 0.5rem;
+                          }
+              
+                          input,
+                          textarea {
+                              width: 100%;
+                              padding: 0.8rem;
+                              font-size: 1rem;
+                              border: none;
+                              border-radius: 5px;
+                              background: rgba(255, 255, 255, .05);
+                              border: 1px solid rgba(255, 255, 255, .15);
+                              color: white;
+
+                              &:focus {
+                                  outline: 2px solid #007bff; /* Blue outline on focus */
+                              }
+                          }
+
+                          textarea {
+                              min-height: 100px;
+                              resize: none;
+                          }
+                      }
+                  }
+
+                  .input-container {
+                      display: flex;
+                      flex-direction: column;
+
+                      label {
+                          font-size: 0.9rem;
+                          color: #d4d4d4;
+                          margin-bottom: 0.5rem;
+                      }
+
+                      input,
+                      textarea {
+                          width: 100%;
+                          padding: 0.8rem;
+                          font-size: 1rem;
+                          border: none;
+                          border-radius: 5px;
+                          background: rgba(255, 255, 255, .05);
+                          border: 1px solid rgba(255, 255, 255, .15);
+                          color: white;
+
+                          &:focus {
+                              outline: 2px solid #007bff;
+                          }
+                      }
+                  }
+
+                  .send-btn {
+                      padding: 0.8rem 2rem;
+                      font-size: 1rem;
+                      font-weight: bold;
+                      border: none;
+                      border-radius: 20px;
+                      cursor: pointer;
+                      background-color: #007bff; /* Default Blue */
+                      color: white;
+                      transition: background-color 0.3s ease, outline 0.3s ease;
+                    
+                      &:hover {
+                          background-color: black; /* Hover Black */
+                          outline: 2px solid white;
+                      }
+                    
+                      &.sent {
+                          background-color: red; /* Red when email is sent */
+                      }
+                    
+                      &.sent:hover {
+                          background-color: black; /* Black hover on "Message Sent" */
+                      }
+                  }
+              }
+          }
+      }
+  }
+
+  @media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+  
+        .right-section {
+            order: 1;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+  
+    .left-section {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the left */
+        text-align: left; /* Align text to the left */
+        width: 100%;
+        max-width: 100% !important;
+        padding: 0; /* Optional padding for spacing */
+  
+        .image-container {
+            display: none;
+        }
+  
+        .contact-info {
+            width: 100%;
+            margin-top: 2rem;
+            .p{
+              margin-bottom:1rem;
+            }
+        }
+        
+    }
+  }
+  
+}

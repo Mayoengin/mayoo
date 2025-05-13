@@ -1,0 +1,36 @@
+/* General styling for app-root */
+app-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Ensure it covers full height */
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+/* Content wrapper */
+.content-wrapper {
+  width: 100%;
+  max-width: 1200px; /* Limit width for large screens */
+  padding: 1rem; /* Add padding for mobile devices */
+  box-sizing: border-box; /* Include padding in the total width */
+  margin: 0 auto; /* Center the content */
+}
+
+/* Ensure body and html elements are fully responsive */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 1rem 1.5rem; /* Add more padding for smaller screens */
+    max-width: 100%; /* Ensure full width for small screens */
+  }
+}

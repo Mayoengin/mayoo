@@ -1,0 +1,58 @@
+/* second-layout.component.scss */
+
+.second-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 2rem;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 10px;
+  height: 100vh; /* Full screen height */
+
+  /* Child elements (Assuming two children: .profile-pic and .content) */
+  .profile-pic {
+    width: 50%; /* Adjust as needed */
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+
+  .content {
+    width: 45%; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+    height: auto; /* Adjust height for content */
+
+    .profile-pic {
+      width: 100%;
+      order: 1; /* Ensure picture is on top */
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .content {
+      width: 100%;
+      order: 2; /* Content below the picture */
+      text-align: center; /* Center text for better readability */
+    }
+  }
+}

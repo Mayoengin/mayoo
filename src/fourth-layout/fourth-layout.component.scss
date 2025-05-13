@@ -1,0 +1,213 @@
+/* fourth-layout.component.scss */
+
+.fourth-layout {
+  padding: 2rem;
+  background: linear-gradient(
+    90deg,
+    #07233B 1.67%,
+    #041D34 39.95%,
+    #04192D 58.24%,
+    #040E18 80.28%,
+    #050C16 101.48%
+  ); /* Dark blue background */
+  color: white;
+  text-align: left;
+
+  .header {
+    text-align: left;
+    margin-bottom: 2rem;
+
+    .tagline {
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      background-color: #003366; /* Blue background */
+      color: white;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+
+      .highlight {
+        color: #007bff; /* Blue color for highlighted text */
+      }
+    }
+  }
+
+  .services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    background-size: cover; /* Ensure the background image covers the card */
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* For overlay positioning */
+    height: 350px; /* Set a fixed height for the cards */
+    color: white; /* Ensure text is visible on the background */
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0; /* Align the overlay to the bottom of the card */
+      left: 0;
+      right: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0)
+      ); /* Top to bottom shading */
+      border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Align items to the left */
+      padding: 1rem;
+      gap: 0.5rem; /* Spacing between elements */
+    }
+
+    .icon-container {
+      background-color: #007bff; /* Blue background for the icon */
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      text-align: left;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #d4d4d4; /* Light gray text */
+      text-align: left;
+      text-underline-offset: 0.2rem;
+    }
+
+    .rating {
+      display: flex;
+      gap: 0.2rem;
+
+      i {
+        color: #ffc107; /* Yellow stars */
+      }
+    }
+
+    .rating i {
+      color: #ffc107; /* Yellow for full and half stars */
+      margin-right: 0.2rem;
+      font-size: 0.8rem; /* Adjust size as needed */
+    }
+
+    .rating i.far {
+      color: #d4d4d4; /* Light gray for empty stars */
+    }
+  }
+
+  /* Mobile View Only */
+  @media (max-width: 768px) {
+    padding: 1rem; /* Reduced padding for smaller screens */
+    text-align: center; /* Center text for better readability */
+
+    .header {
+      text-align: left; /* Center align headers on mobile */
+      margin-bottom: 1.5rem;
+
+
+      .tagline {
+        font-size: 0.9rem; /* Maintain original font size */
+        padding: 0.5rem 1rem; /* Maintain original padding */
+        margin-bottom: 1rem; /* Maintain spacing */
+      }
+
+      h1 {
+        font-size: 2rem; /* Maintain original font size */
+
+        .highlight {
+          color: #007bff; /* Maintain highlight color */
+        }
+      }
+    }
+
+    .services-container {
+      grid-template-columns: 1fr; /* Stack service cards vertically */
+      gap: 1.5rem; /* Reduced gap for better spacing */
+    }
+
+    .service-card {
+      height: 350px; /* Maintain original height */
+      padding: 1rem 0; /* Optional: Add vertical padding if needed */
+
+      .overlay {
+        padding: 1rem; /* Maintain original padding */
+      }
+
+      .icon-container {
+        width: 50px; /* Maintain original size */
+        height: 50px;
+        font-size: 1.5rem; /* Maintain original font size */
+      }
+
+      h3 {
+        font-size: 1.2rem; /* Maintain original font size */
+        text-align: center; /* Center text for mobile */
+      }
+
+      p {
+        font-size: 0.9rem; /* Maintain original font size */
+        text-align: center; /* Center text for mobile */
+      }
+
+      .rating i {
+        font-size: 0.8rem; /* Maintain original size */
+      }
+    }
+  }
+
+  /* Extra Small Devices */
+  @media (max-width: 480px) {
+    padding: 0.5rem; /* Further reduced padding */
+
+    .header {
+      margin-bottom: 1rem;
+
+      h1 {
+        font-size: 2rem; /* Maintain original font size */
+
+        .highlight {
+          color: #007bff; /* Maintain highlight color */
+        }
+      }
+    }
+
+    .services-container {
+      gap: 1rem; /* Further reduced gap */
+    }
+
+    .service-card {
+      .icon-container {
+        width: 50px; /* Maintain original size */
+        height: 50px;
+        font-size: 1.5rem; /* Maintain original font size */
+      }
+    }
+  }
+}

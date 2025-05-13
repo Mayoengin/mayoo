@@ -1,0 +1,75 @@
+/* logo-line.component.scss */
+
+.logo-extend {
+  --px-theme-rgb: 7, 136, 255;
+  display: flex;
+  justify-content: space-between; /* Center all logos together */
+  align-items: center; /* Center vertically */
+  gap: 0.5rem; /* Add space between logos */
+  padding: 1rem 0;
+  background: rgba(var(--px-theme-rgb), 0.1);
+  border-radius: 5px;
+  width: 100%;
+  margin: 0 auto; /* Center the entire logo-line on the page */
+  height: 150px; /* Adjust height of logo line */
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    height: auto; /* Allow height to adjust based on content */
+    padding: 0.5rem 0;
+    gap: 1rem; /* Increase gap for better spacing on small screens */
+  }
+}
+
+.logo-line {
+  display: flex;
+  justify-content: space-between; /* Center all logos together */
+  align-items: center; /* Center vertically */
+  gap: 0.5rem; /* Add space between logos */
+  padding: 1rem 0;
+  border-radius: 5px;
+  width: 80%;
+  margin: 0 auto; /* Center the entire logo-line on the page */
+  height: 150px; /* Adjust height of logo line */
+
+  @media (max-width: 768px) {
+    width: 90%;
+    height: auto; /* Allow height to adjust based on content */
+    padding: 0.5rem 0;
+    gap: 1rem; /* Increase gap for better spacing */
+  }
+
+  .logo-item {
+    display: flex;
+    align-items: center; /* Center content within each logo item */
+    justify-content: center; /* Center content vertically */
+    gap: 0.5rem;
+    text-align: center;
+    color: white;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      flex-direction: column; /* Stack image and text vertically */
+      width: 80%; /* Reduce width for better alignment */
+    }
+
+    img {
+      width: 80px; /* Adjust logo size */
+      height: auto;
+
+      @media (max-width: 768px) {
+        width: 60px; /* Reduce logo size on small screens */
+      }
+    }
+
+    h3 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin: 0;
+
+      @media (max-width: 768px) {
+        font-size: 0.8rem; /* Reduce font size on small screens */
+      }
+    }
+  }
+}
